@@ -1,0 +1,148 @@
+
+                                #    Assignment 2
+
+
+
+                #       Start of the first Program.
+
+""" 
+
+    A small command line program in python
+    to calculate the total invoice amount for the below purchases:
+
+    Book - Introduction to Python - Rs.499.00
+    Book - Python Libraries Cookbook - Rs.855.00
+    Book - Data Science with Python - Rs.645.00
+
+
+    Taxes and Additional Charges:
+
+        GST - 12%
+        Delivery Charges - Rs.250.00
+
+"""
+
+Total_price = 0.00
+
+# Taking input from the user for book selection.
+def shopping():
+    while True:
+        print("\n Select the Book that you want to buy from the list given below :")
+        print(" 1. Introduction to Python")
+        print(" 2. Python Libraries Cookbook")
+        print(" 3. Data Science with Python\n")
+        try:
+            book = int(input(" Enter the Book number : "))
+        except ValueError:
+            print("\n Invalid Book Selection. Please try again\nTo stop shopping press 0\n")
+            continue
+
+        if book == 0:
+            print("\nThank You for shopping with us")
+            break
+        elif book == 1:
+            print("\n You have selected Introduction to Python")
+            break
+        elif book == 2:
+            print("\n You have selected Python Libraries Cookbook")
+            break
+        elif book == 3:
+            print("\n You have selected Data Science with Python")
+            break
+        else:
+            print("\n Invalid Book number, Please try again\n To stop shopping press 0\n")
+            book = 0
+            continue
+            
+            #   Taking input from the user for selection of quantity for that particular book.
+
+    while book:
+        try:
+            quantity = int(input("\n Select it's quantity : "))
+        except ValueError:
+            print("\n Invalid Quantity. Please try again\n To cancel current shopping press 0\n")
+            continue
+        if quantity == 0:
+            break
+        else:
+            print("\n You have selected", quantity, "quantity of the book")
+            break
+
+    global Total_price
+    if book == 1:
+        price = 499.00
+        Total_price = Total_price + ( price * quantity * 1.12 )
+
+    elif book == 2:
+        price = 855.00
+        Total_price = Total_price + ( price * quantity * 1.12)
+
+    elif book == 3:
+        price = 645.00
+        Total_price = Total_price + ( price * quantity * 1.12)
+
+while True:
+    print("\n\nWanna continue shopping ? \n")
+    print("If yes enter 'yes' or enter 'no' to go to cart\n")
+    answer = input().lower()
+    if answer == "no":
+        if Total_price == 0.00:
+            print("\n\nThank You for visiting us")
+            exit()
+        # Displaying the final invoice amount
+        print("\n\n Invoice")
+        print("-----------------------------")
+        print("\nPrice : Rs. ", round(Total_price,2))
+        print("Delivery Charges : Rs. 250.00\n")
+        print("-----------------------------")
+        print("Total : Rs.", round((Total_price + 250.00),2))
+        print("-----------------------------")
+        print("\n\n---Thank you for shopping with us---\n")
+        print("           Visit us again\n\n")
+        exit()
+    elif answer == "yes":
+        # go to the start of the program where the while loop exists.
+        shopping()
+        print("\n\n")
+    else:
+        print("\n\nInvalid input. Please try again\n\n")
+        continue
+
+
+
+                    #       End of the first Program.  
+
+
+
+
+
+
+
+
+
+
+
+
+                    #       Start of the second Program.
+
+"""
+    
+        Write a program in python to print the number of unique letters in a string.
+        Only new letters from the string should be counted and not duplicates.  
+
+"""
+
+
+word = input("string1 = ")
+
+UniqueWords = []
+
+for letter in word:
+    if letter.lower() not in UniqueWords:
+        UniqueWords.append(letter.lower())
+print("uniqueLetters = ",end="")
+
+print(*UniqueWords, sep=",")
+
+
+                    #   End of the second Program.
