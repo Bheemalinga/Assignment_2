@@ -92,7 +92,7 @@ while True:
         # Displaying the final invoice amount
         print("\n\n Invoice")
         print("-----------------------------")
-        print("\nPrice + GST : Rs. ", round(Total_price,2))
+        print("\nPrice + 12% GST : Rs. ", round(Total_price,2))
         print("Delivery Charges : Rs. 250.00\n")
         print("-----------------------------")
         print("Total : Rs.", round((Total_price + 250.00),2))
